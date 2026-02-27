@@ -35,6 +35,31 @@
 
 LiquidCrystal_I2C lcd(0x20, 16, 2); // Set the LCD address to default 0x20 for a 16 chars and 2 line display
 
+// Set motor controlling pins as outputs
+void setPortDirection()
+{
+  // For Motor_1 (PE1, PE0)
+  DDRE |= (1 << PE1) | (1 << PE0);
+  // For Motor_2 (PE5, PE4)
+  DDRE |= (1 << PE5) | (1 << PE4);
+  // For Motor_3 (PE3, PG5)
+  DDRE |= (1 << PE3);
+  DDRG |= (1 << PG5);
+  // For Motor_4 (PH4, PH3)
+  DDRH |= (1 << PH4) | (1 << PH3);
+  // For Motor_5 (PH6, PH5)
+  DDRH |= (1 << PH6) | (1 << PH5);
+  // For Motor_6 (PB5, PB4)
+  DDRB |= (1 << PB5) | (1 << PB4);
+  // For Motor_7 (PB7, PB6)
+  DDRB |= (1 << PB7) | (1 << PB6);
+  // For Motor_8 (PJ0, PJ1)
+  DDRJ |= (1 << PJ0) | (1 << PJ1);
+  // For Motor_9 (PH0, PH1)
+  DDRH |= (1 << PH0) | (1 << PH1);
+  // For Motor_10 (PD2, PD3)
+  DDRD |= (1 << PD2) | (1 << PD3);
+}
 
 
 
